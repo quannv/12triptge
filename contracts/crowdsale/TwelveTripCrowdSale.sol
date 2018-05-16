@@ -17,13 +17,14 @@ import "../zeppelin-solidity/crowdsale/validation/TimedCrowdsale.sol";
 import "../zeppelin-solidity/crowdsale/Crowdsale.sol";
 import "../zeppelin-solidity/token/ERC20/MintableToken.sol";
 
-contract VNTripCrowdSale is FinalizableCrowdsale {
+contract TwelveTripCrowdSale is FinalizableCrowdsale {
 
     // wallets address for 52% of TTR allocation
     address public walletTeamAdvisor;   //17.8% of the total number of TTR tokens will be allocated to the team
     address public walletIncentive;     //2% of the total number of TTR tokens will be allocated to
     address public walletBounties;      //12.2% of the total number of TTR tokens will be allocated to professional fees and Bounties
-    address public walletReserve;       //20% of the total number of TTR tokens will be allocated to 12TRIP and as a reserve for the company to be used for future strategic plans for the created ecosystem
+    address public walletReserve;       //20% of the total number of TTR tokens will be allocated to 12TRIP and as a reserve for 
+                                        //the company to be used for future strategic plans for the created ecosystem
 
     uint256 public teamAdvisorTokens;
     uint256 public reserveTokens;
@@ -35,7 +36,7 @@ contract VNTripCrowdSale is FinalizableCrowdsale {
     uint256 public minBuy;
     uint256 public maxBuy;
 
-    function VNTripCrowdSale(
+    function TwelveTripCrowdSale(
         uint256 _startTime,
         uint256 _endTime,
         address _wallet,

@@ -2,14 +2,14 @@ pragma solidity ^0.4.19;
 
 import "../zeppelin-solidity/token/ERC20/MintableToken.sol";
 
-contract VNTripToken is MintableToken {
+contract TwelveTripToken is MintableToken {
     // =================================================================================================================
     //                                         Members
     // =================================================================================================================
 
-    string public name = "12TRIP";
+    string public name = "Twelve Trip";
 
-    string public symbol = "TTR";
+    string public symbol = "TRIP";
 
     uint8 public decimals = 18;
 
@@ -17,6 +17,6 @@ contract VNTripToken is MintableToken {
     //                                         Constructor
     // =================================================================================================================
 
-    function VNTripToken() public {
+    function TwelveTripToken() public {
     }
 }

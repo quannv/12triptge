@@ -11,12 +11,11 @@ const should = require('chai')
   .use(require('chai-bignumber')(BigNumber))
   .should();
 
-const VNTripCrowdSale = artifacts.require('VNTripCrowdSale');
-const VNTripToken = artifacts.require('VNTripToken')
+const TwelveTripCrowdSale = artifacts.require('TwelveTripCrowdSale');
+const TwelveTripToken = artifacts.require('TwelveTripToken')
 
 
-
-contract('VNTripCrowdSale', function (accounts) {
+contract('TwelveTripCrowdSale', function (accounts) {
   const investor = accounts[accounts.length - 1]
   const investor1 = accounts[accounts.length - 2]
   const investor2 = accounts[accounts.length - 3]
@@ -46,8 +45,8 @@ contract('VNTripCrowdSale', function (accounts) {
     config.teamTimeBlock = config.endTime + duration.weeks(26);
     config.reserveTimeBlock = config.endTime + duration.weeks(52);
 
-    this.token = await VNTripToken.new();
-    this.crowdsale = await VNTripCrowdSale.new(
+    this.token = await TwelveTripToken.new();
+    this.crowdsale = await TwelveTripCrowdSale.new(
       config.startTime,
       config.endTime,
       config.wallet,

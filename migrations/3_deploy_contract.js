@@ -1,5 +1,5 @@
-const VNTripToken = artifacts.require("VNTripToken");
-const VNTripCrowdSale = artifacts.require("VNTripCrowdSale");
+const TwelveTripToken = artifacts.require("TwelveTripToken");
+const TwelveCrowdSale = artifacts.require("TwelveTripCrowdSale");
 const MultiSigWallet = artifacts.require("./multisig/MultiSigWallet.sol");
 const BigNumber = web3.BigNumber;
 
@@ -14,8 +14,6 @@ module.exports = function (deployer) {
   //crowd sale start/end date
   config.startTime = web3.eth.getBlock(web3.eth.blockNumber).timestamp + 5;
   config.endTime = config.startTime + DAY * 200;
-  console.log(config.startTime)
-  console.log(config.endTime)
 
   //owner of multisign fund wallet
   config.owner1 = accounts[0];
@@ -50,14 +48,14 @@ module.exports = function (deployer) {
   //TODO: need source
   config.rate = 480;
 
-  var vNTripToken;
+  var twelveTripToken;
   deployer
     .then(function () {
-      return VNTripToken.deployed()
+      return TwelveTripToken.deployed()
     })
     .then((instance) => {
-      vNTripToken = instance;
-      return deployer.deploy(VNTripCrowdSale,
+      twelveTripToken = instance;
+      return deployer.deploy(TwelveCrowdSale,
         config.startTime,
         config.endTime,
         config.wallet,
@@ -68,7 +66,7 @@ module.exports = function (deployer) {
         config.minBuy,
         config.maxBuy,
         config.rate,
-        vNTripToken.address,
+        twelveTripToken.address,
         config.teamTimeBlock,
         config.reserveTimeBlock)
     }).then((res) => {
