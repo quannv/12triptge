@@ -7,7 +7,7 @@ contract TwelveTripToken is MintableToken {
     //                                         Members
     // =================================================================================================================
 
-    string public name = "Twelve Trip";
+    string public name = "12 Trip";
 
     string public symbol = "TRIP";
 
