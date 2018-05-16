@@ -1,15 +1,3 @@
-//TODO
-/**
-    gioi han so luong token
-    co refund khong
-
-    tao dapp để mua token thuận lợi
-    tao node tren test net va main net (infura?)
-
-    test tren test net
-    verify source
- */
-
 pragma solidity ^0.4.18;
 
 import "../zeppelin-solidity/crowdsale/distribution/FinalizableCrowdsale.sol";
@@ -19,7 +7,7 @@ import "../zeppelin-solidity/token/ERC20/MintableToken.sol";
 
 contract TwelveTripCrowdSale is FinalizableCrowdsale {
 
-    // wallets address for 52% of TTR allocation
+    // wallets address for 52% of TRIP allocation
     address public walletTeamAdvisor;   //17.8% of the total number of TTR tokens will be allocated to the team
     address public walletIncentive;     //2% of the total number of TTR tokens will be allocated to
     address public walletBounties;      //12.2% of the total number of TTR tokens will be allocated to professional fees and Bounties
