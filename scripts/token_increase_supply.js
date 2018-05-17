@@ -1,13 +1,13 @@
-const VNTripToken = artifacts.require("VNTripToken");
+const TwelveTripToken = artifacts.require("TwelveTripToken");
 
 module.exports = function (done) {
-  var vNTripToken;
-  return VNTripToken.deployed()
+  var twelveTripToken;
+  return TwelveTripToken.deployed()
     .then((instance) => {
-      vNTripToken = instance;
-      return vNTripToken.mint(0, 100)
+      twelveTripToken = instance;
+      return twelveTripToken.mint(0, 100)
     }).then(res => {
-      return vNTripToken.totalSupply.call()
+      return twelveTripToken.totalSupply.call()
     }).then((totalSupply) => {
       console.log(totalSupply)
       done()

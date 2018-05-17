@@ -1,12 +1,12 @@
-const VNTripToken = artifacts.require('VNTripToken');
+const TwelveTripToken = artifacts.require('TwelveTripToken');
 const utils = require('./helpers/Utils');
 
-contract('VNTripToken', (accounts) => {
+contract('TwelveTripToken', (accounts) => {
   let token;
   let owner = accounts[0];
 
   beforeEach(async () => {
-    token = await VNTripToken.new();
+    token = await TwelveTripToken.new();
   });
 
   describe('construction', async () => {
@@ -27,7 +27,7 @@ contract('VNTripToken', (accounts) => {
     });
 
     it('should check total supply', async () => {
-      let token = await VNTripToken.new();
+      let token = await TwelveTripToken.new();
       await token.mint(accounts[0], 1000);
       let totalSupply = await token.totalSupply.call();
       assert.equal(totalSupply, 1000);

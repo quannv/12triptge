@@ -1,13 +1,13 @@
-const VNTripToken = artifacts.require("VNTripToken");
+const TwelveTripToken = artifacts.require("TwelveTripToken");
 
 module.exports = function (done) {
-  var vNTripToken;
+  var twelveTripToken;
   var accounts = web3.eth.accounts;
 
-  return VNTripToken.deployed()
+  return TwelveTripToken.deployed()
     .then((instance) => {
-      vNTripToken = instance;
-      return vNTripToken.balanceOf.call(accounts[0])
+      twelveTripToken = instance;
+      return twelveTripToken.balanceOf.call(accounts[0])
     }).then((balance) => {
       console.log(balance)
       done()

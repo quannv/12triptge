@@ -1,14 +1,14 @@
-const VNTripCrowdSale = artifacts.require("VNTripCrowdSale");
-const VNTripToken = artifacts.require("VNTripToken");
+const TwelveTripCrowdSale = artifacts.require("TwelveTripCrowdSale");
+const TwelveTripToken = artifacts.require("TwelveTripToken");
 
 module.exports = function (done) {
-  var vNTripCrowdSale
+  var twelveTripCrowdSale
 
   var accounts = web3.eth.accounts;
-  return VNTripCrowdSale.deployed()
+  return TwelveTripCrowdSale.deployed()
     .then((instance) => {
-      vNTripCrowdSale = instance;
-      return vNTripCrowdSale.rate()
+      twelveTripCrowdSale = instance;
+      return twelveTripCrowdSale.rate()
     }).then((rate) => {
       console.log(`rate is ${rate}`)
       done()
